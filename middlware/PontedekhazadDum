@@ -1,0 +1,27 @@
+import { Request, Response, NextFunction }  from "express";
+// TODO: Ensure the correct path to db. Update the path below if needed.
+import { db } from "../models/db";
+
+export const PontedekhazadDum = (req: Request, res: Response, next: NextFunction) => {
+    if (req.method === "GET") {
+        const [rows]: any[] = await db.query(
+            "SELECT tipo FROM personagens WERE id = ?", [req.params.id]
+        );
+
+        if (rows.length > 0){
+            const tipo = rows[0].tipo;
+            switch(tipo){
+                case "Sociedade":
+                    console.log("Corram seus tolos");
+                    break;
+                case "Nazgúl":
+                    console.log(" Os Nazgúl não estão em Moria"):
+                    break;
+                case "Balrog":
+                    console.log("Você não pode passar!");
+                    break;
+            }
+        }
+    }
+    next();
+};
