@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "trabalhoaneis",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,13 +12,12 @@
   "author": "",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "@types/express": "^5.0.3",
-    "@types/node": "^24.2.1",
-    "ts-node-dev": "^2.0.0",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3",
     "typescript": "^5.9.2"
   },
-  "dependencies": {
-    "express": "^5.1.0"
+  "devDependencies": {
+    "@types/express": "^5.0.3"
   }
 }
